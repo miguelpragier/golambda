@@ -1,0 +1,2 @@
+# golambda
+Golang Lambda Example
