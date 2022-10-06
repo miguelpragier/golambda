@@ -19,6 +19,14 @@ func (m handlerManager) getHandler(e events.APIGatewayV2HTTPRequest) (handlerFun
 	return nil, false
 }
 
+func pingPong(e events.APIGatewayV2HTTPRequest) map[string]interface{} {
+	return httpRawResponse(http.StatusOK, "pong")
+}
+
+func requestEcho(e events.APIGatewayV2HTTPRequest) map[string]interface{} {
+	return JSONResponse(http.StatusOK, e, nil)
+}
+
 func configureHandlers() []handlerMap {
 	var a []handlerMap
 
